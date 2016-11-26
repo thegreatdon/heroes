@@ -21,6 +21,6 @@ export class AppComponent {
   title = 'Tour of Heroes';
   hero: Hero = {
     id: 1,
-    name: 'Deadpool'
+    name: 'Negasonic Teenage Warhead'
   };
 }
