@@ -19,15 +19,15 @@ export class Station {
     <h2>{{title}}</h2>
     <h3>{{station.name}} details</h3>
 
-    <div style="width:800px;">
+    <div style="width:600px;border: 1px dashed #ccc;">
 
-      <div style="float:left;border:1px solid red;">
+      <div style="float:left;">
         <div>
           <label>Name: </label>
           <input [(ngModel)]="station.name" placeholder="name">
         </div>
         <div>
-          City: <input [(ngModel)]="station.city" placeholder="city">, State: <input [(ngModel)]="station.state" placeholder="state">
+          City: <input [(ngModel)]="station.city" placeholder="city">, State: <input [(ngModel)]="station.state" placeholder="state" size="2">
         </div>
         <div>
           Status: 
@@ -45,7 +45,7 @@ export class Station {
     
 
   
-      <div style="float:right;border: 1px solid blue;">
+      <div style="float:right;">
         <label>id: </label>{{station.id}} <br/> 
         <label>location: </label>{{station.city}},{{station.state}} <br/>  
         <label>member status: </label>{{station.status}} <br/>  
