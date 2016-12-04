@@ -1,26 +1,73 @@
+
+
 import { Component } from '@angular/core';
 
-export class Hero {
+export class Station {
   id: number;
   name: string;
+  city: string;
+  state: string;
+  status: string;
+  type: string;
 }
+
+
 
 @Component({
   selector: 'my-app',
   template: `
-    <h1>{{title}}</h1>
-    <h2>{{hero.name}} details!</h2>
-    <div><label>id: </label>{{hero.id}}</div>
-    <div>
-      <label>name: </label>
-      <input [(ngModel)]="hero.name" placeholder="name">
+    <h2>{{title}}</h2>
+    <h3>{{station.name}} details</h3>
+
+    <div style="width:800px;">
+
+      <div style="float:left;border:1px solid red;">
+        <div>
+          <label>Name: </label>
+          <input [(ngModel)]="station.name" placeholder="name">
+        </div>
+        <div>
+          City: <input [(ngModel)]="station.city" placeholder="city">, State: <input [(ngModel)]="station.state" placeholder="state">
+        </div>
+        <div>
+          Status: 
+          <select [(ngModel)]="station.status" placeholder="status">
+            <option value="Member">Member
+            <option value="Non-Member">Non-Member
+          </select>
+        </div>
+        <div>
+          Type: 
+          <input type="radio" value="News" [(ngModel)]="station.type" placeholder="type">News |
+          <input type="radio" value="Music" [(ngModel)]="station.type" placeholder="type">Music
+        </div>
+      </div>
+    
+
+  
+      <div style="float:right;border: 1px solid blue;">
+        <label>id: </label>{{station.id}} <br/> 
+        <label>location: </label>{{station.city}},{{station.state}} <br/>  
+        <label>member status: </label>{{station.status}} <br/>  
+        <label>type: </label>{{station.type}}
+      </div>
+  
+      <div style="clear:both"></div>
+
     </div>
+
+
     `
 })
+
 export class AppComponent {
-  title = 'Tour of Heroes';
-  hero: Hero = {
+  title = 'NPR Stations';
+  station: Station = {
     id: 1,
-    name: 'Negasonic Teenage Warhead'
+    name: 'WAMU-FM',
+    city: 'Washington',
+    state: 'DC',
+    status: 'Member',
+    type: 'News'
   };
 }
